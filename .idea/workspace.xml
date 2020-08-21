@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5de8d0d-2ab8-46ef-b1d3-5373f436e65d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/parser/pkt2CStruct.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/quest/quest_msg.go" beforeDir="false" afterPath="$PROJECT_DIR$/messages/quest/quest_msg.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/loginStruct.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser/loginStruct.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/pkt2QStruct.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser/pkt2QStruct.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/toStructureFunctuins.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser/toStructureFunctuins.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner.go" beforeDir="false" afterPath="$PROJECT_DIR$/runner.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/combat/combat_msg.go" beforeDir="false" afterPath="$PROJECT_DIR$/messages/combat/combat_msg.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser/loginStruct.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser/pkt2LStruct.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +34,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
@@ -73,6 +72,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added live capture. modified login to be more similar to pkt2QStruct, no longer requires initialization before using map." />
+    <option name="LAST_COMMIT_MESSAGE" value="added live capture. modified login to be more similar to pkt2QStruct, no longer requires initialization before using map." />
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
@@ -98,6 +101,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="880" y="291" width="668" height="555" key="#xdebugger.XInspectDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1598035450926" />
+    <state x="658" y="298" key="CommitChangelistDialog2" timestamp="1598046804365">
+      <screen x="0" y="32" width="2560" height="1408" />
+    </state>
+    <state x="658" y="298" key="CommitChangelistDialog2/0.32.2560.1408@0.32.2560.1408" timestamp="1598046804365" />
     <state width="490" height="506" key="DebuggerActiveHint" timestamp="1598035475554">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -111,26 +118,26 @@
     </state>
     <state x="744" y="310" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1598024674374" />
     <state x="992" y="410" key="FileChooserDialogImpl/0.32.2560.1408@0.32.2560.1408" timestamp="1598041105510" />
-    <state width="2091" height="411" key="GridCell.Tab.0.bottom" timestamp="1598046709534">
+    <state width="2091" height="242" key="GridCell.Tab.0.bottom" timestamp="1598047467038">
       <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447033" />
-    <state width="2091" height="411" key="GridCell.Tab.0.bottom/0.32.2560.1408@0.32.2560.1408" timestamp="1598046709534" />
-    <state width="2091" height="411" key="GridCell.Tab.0.center" timestamp="1598046709534">
+    <state width="2091" height="242" key="GridCell.Tab.0.bottom/0.32.2560.1408@0.32.2560.1408" timestamp="1598047467038" />
+    <state width="2091" height="242" key="GridCell.Tab.0.center" timestamp="1598047467038">
       <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447032" />
-    <state width="2091" height="411" key="GridCell.Tab.0.center/0.32.2560.1408@0.32.2560.1408" timestamp="1598046709534" />
-    <state width="2091" height="411" key="GridCell.Tab.0.left" timestamp="1598046709533">
+    <state width="2091" height="242" key="GridCell.Tab.0.center/0.32.2560.1408@0.32.2560.1408" timestamp="1598047467038" />
+    <state width="2091" height="242" key="GridCell.Tab.0.left" timestamp="1598047467038">
       <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447032" />
-    <state width="2091" height="411" key="GridCell.Tab.0.left/0.32.2560.1408@0.32.2560.1408" timestamp="1598046709533" />
-    <state width="2091" height="411" key="GridCell.Tab.0.right" timestamp="1598046709534">
+    <state width="2091" height="242" key="GridCell.Tab.0.left/0.32.2560.1408@0.32.2560.1408" timestamp="1598047467038" />
+    <state width="2091" height="242" key="GridCell.Tab.0.right" timestamp="1598047467038">
       <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447032" />
-    <state width="2091" height="411" key="GridCell.Tab.0.right/0.32.2560.1408@0.32.2560.1408" timestamp="1598046709534" />
+    <state width="2091" height="242" key="GridCell.Tab.0.right/0.32.2560.1408@0.32.2560.1408" timestamp="1598047467038" />
     <state width="2091" height="309" key="GridCell.Tab.1.bottom" timestamp="1598046656393">
       <screen x="0" y="32" width="2560" height="1408" />
     </state>
