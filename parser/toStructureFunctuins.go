@@ -6,7 +6,7 @@ import (
 )
 
 func buildLoginMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return BuildLoginStruct(array, MessageMap[int(number)])
+	return BuildLoginStruct(array, LoginMessageNumberLookUp[int(number)].String())
 }
 
 func buildPatchMessage(array []byte, number uint8) messages.ProtocolMessage {
@@ -94,7 +94,7 @@ func buildDuelMessage(array []byte, number uint8) messages.ProtocolMessage {
 }
 
 func buildQuestMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return buildQuestStruct(array,MessageNumberLookUp[number].String())
+	return buildQuestStruct(array, QuestMessageNumberLookup[number].String())
 
 }
 
@@ -124,8 +124,11 @@ func buildBaseMessage(array []byte, number uint8) messages.ProtocolMessage {
 
 func buildControlMessage(opCode uint8) messages.ProtocolMessage {
 	switch opCode {
-	case KeepAlive: return misc.KeepAlive{}
-	case KeepAliveRsp: return misc.KeepAliveResponse{}
-	default: return nil
+	case KeepAlive:
+		return misc.KeepAlive{}
+	case KeepAliveRsp:
+		return misc.KeepAliveResponse{}
+	default:
+		return nil
 	}
 }

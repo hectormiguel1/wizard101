@@ -4,37 +4,36 @@ import (
 	"wizard101/messages"
 	"wizard101/messages/login"
 )
-var MessageMap = make(map[int]string)
 
-/* Function is Used to initialize a map of int to messages interfaces, this is useful make struct based on message number in packet. */
-func InitializeLoginMap() {
-	MessageMap[1] = login.CharacterInfo{}.String()
-	MessageMap[2] = login.CharacterList{}.String()
-	MessageMap[3] = login.CharacterSelected{}.String()
-	MessageMap[4] = login.CreateCharacter{}.String()
-	MessageMap[5] = login.CreateCharacterResponse{}.String()
-	MessageMap[6] = login.DeleteCharacter{}.String()
-	MessageMap[7] = login.DeleteCharacterResponse{}.String()
-	MessageMap[8] = login.RequestCharacterList{}.String()
-	MessageMap[9] = login.RequestServerList{}.String()
-	MessageMap[10] = login.SelectCharacter{}.String()
-	MessageMap[11] = login.ServerList{}.String()
-	MessageMap[12] = login.StartCharacterList{}.String()
-	MessageMap[13] = login.UserAuth{}.String()
-	MessageMap[14] = login.UserAuthRsp{}.String()
-	MessageMap[15] = login.UserValidate{}.String()
-	MessageMap[16] = login.UserValidateRsp{}.String()
-	MessageMap[17] = login.DisconnectLoginAfk{}.String()
-	MessageMap[18] = login.LoginNotAfk{}.String()
-	MessageMap[19] = login.LoginServerShutdown{}.String()
-	MessageMap[20] = login.UserAdmitInd{}.String()
-	MessageMap[21] = login.WebCharacterInfo{}.String()
-	MessageMap[22] = login.UserAuthV2{}.String()
-	MessageMap[23] = login.SaveCharacter{}.String()
-	MessageMap[24] = login.WebAuth{}.String()
-	MessageMap[25] = login.WebValidate{}.String()
-	MessageMap[26] = login.ChangeCharacterName{}.String()
-	MessageMap[27] = login.UserAuthV3{}.String()
+var LoginMessageNumberLookUp = [...]messages.ProtocolMessage{
+	nil,
+	login.CharacterInfo{},
+	login.CharacterList{},
+	login.CharacterSelected{},
+	login.CreateCharacter{},
+	login.CreateCharacterResponse{},
+	login.DeleteCharacter{},
+	login.DeleteCharacterResponse{},
+	login.RequestCharacterList{},
+	login.RequestServerList{},
+	login.SelectCharacter{},
+	login.ServerList{},
+	login.StartCharacterList{},
+	login.UserAuth{},
+	login.UserAuthRsp{},
+	login.UserValidate{},
+	login.UserValidateRsp{},
+	login.DisconnectLoginAfk{},
+	login.LoginNotAfk{},
+	login.LoginServerShutdown{},
+	login.UserAdmitInd{},
+	login.WebCharacterInfo{},
+	login.UserAuthV2{},
+	login.SaveCharacter{},
+	login.WebAuth{},
+	login.WebValidate{},
+	login.ChangeCharacterName{},
+	login.UserAuthV3{},
 }
 
 func BuildLoginStruct(packet []byte, message string) messages.ProtocolMessage {

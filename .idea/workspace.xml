@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5de8d0d-2ab8-46ef-b1d3-5373f436e65d" name="Default Changelist" comment="" />
+    <list default="true" id="b5de8d0d-2ab8-46ef-b1d3-5373f436e65d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/quest/quest_msg.go" beforeDir="false" afterPath="$PROJECT_DIR$/messages/quest/quest_msg.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser/loginStruct.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser/loginStruct.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser/pkt2QStruct.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser/pkt2QStruct.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser/toStructureFunctuins.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser/toStructureFunctuins.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runner.go" beforeDir="false" afterPath="$PROJECT_DIR$/runner.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +22,9 @@
     </option>
   </component>
   <component name="GOROOT" path="/usr/lib/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
     <option name="useGoPathFromSystemEnvironment" value="false" />
@@ -45,7 +55,8 @@
     <configuration name="go build wizard101" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="wizard101" />
       <working_directory value="$PROJECT_DIR$" />
-      <parameters value="$USER_HOME$/run1.pcapng" />
+      <parameters value="live enp5s0" />
+      <sudo value="true" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/runner.go" />
       <package value="wizard101" />
@@ -74,10 +85,11 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="276" y="390" key="#Go_Modules/0.27.1920.1053@0.27.1920.1053" timestamp="1598023836046" />
-    <state x="0" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598032941040">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="1280" y="152" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598045667361">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state x="0" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1598032941040" />
+    <state x="1280" y="152" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.32.2560.1408@0.32.2560.1408" timestamp="1598045667361" />
     <state x="214" y="355" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598024287014">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -94,84 +106,63 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="402" y="420" key="EnvironmentVariablesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1598024663699" />
-    <state x="744" y="310" key="FileChooserDialogImpl" timestamp="1598024674374">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="992" y="410" key="FileChooserDialogImpl" timestamp="1598041105510">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state x="744" y="310" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1598024674374" />
-    <state width="1874" height="410" key="GridCell.Tab.0.bottom" timestamp="1598037447033">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="992" y="410" key="FileChooserDialogImpl/0.32.2560.1408@0.32.2560.1408" timestamp="1598041105510" />
+    <state width="2091" height="411" key="GridCell.Tab.0.bottom" timestamp="1598046709534">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447033" />
-    <state width="1874" height="410" key="GridCell.Tab.0.center" timestamp="1598037447032">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2091" height="411" key="GridCell.Tab.0.bottom/0.32.2560.1408@0.32.2560.1408" timestamp="1598046709534" />
+    <state width="2091" height="411" key="GridCell.Tab.0.center" timestamp="1598046709534">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447032" />
-    <state width="1874" height="410" key="GridCell.Tab.0.left" timestamp="1598037447032">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2091" height="411" key="GridCell.Tab.0.center/0.32.2560.1408@0.32.2560.1408" timestamp="1598046709534" />
+    <state width="2091" height="411" key="GridCell.Tab.0.left" timestamp="1598046709533">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447032" />
-    <state width="1874" height="410" key="GridCell.Tab.0.right" timestamp="1598037447032">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2091" height="411" key="GridCell.Tab.0.left/0.32.2560.1408@0.32.2560.1408" timestamp="1598046709533" />
+    <state width="2091" height="411" key="GridCell.Tab.0.right" timestamp="1598046709534">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447032" />
-    <state width="1874" height="410" key="GridCell.Tab.1.bottom" timestamp="1598037447033">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2091" height="411" key="GridCell.Tab.0.right/0.32.2560.1408@0.32.2560.1408" timestamp="1598046709534" />
+    <state width="2091" height="309" key="GridCell.Tab.1.bottom" timestamp="1598046656393">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447033" />
-    <state width="1874" height="410" key="GridCell.Tab.1.center" timestamp="1598037447033">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2091" height="309" key="GridCell.Tab.1.bottom/0.32.2560.1408@0.32.2560.1408" timestamp="1598046656393" />
+    <state width="2091" height="309" key="GridCell.Tab.1.center" timestamp="1598046656393">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447033" />
-    <state width="1874" height="410" key="GridCell.Tab.1.left" timestamp="1598037447033">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2091" height="309" key="GridCell.Tab.1.center/0.32.2560.1408@0.32.2560.1408" timestamp="1598046656393" />
+    <state width="2091" height="309" key="GridCell.Tab.1.left" timestamp="1598046656393">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447033" />
-    <state width="1874" height="410" key="GridCell.Tab.1.right" timestamp="1598037447033">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="2091" height="309" key="GridCell.Tab.1.left/0.32.2560.1408@0.32.2560.1408" timestamp="1598046656393" />
+    <state width="2091" height="309" key="GridCell.Tab.1.right" timestamp="1598046656393">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447033" />
+    <state width="2091" height="309" key="GridCell.Tab.1.right/0.32.2560.1408@0.32.2560.1408" timestamp="1598046656393" />
     <state x="0" y="188" key="SettingsEditor" timestamp="1598024715294">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="0" y="188" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1598024715294" />
-    <state width="964" height="528" key="XDebugger.FullValuePopup" timestamp="1598037381159">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state width="1286" height="707" key="XDebugger.FullValuePopup" timestamp="1598045884039">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state width="964" height="528" key="XDebugger.FullValuePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1598037381159" />
+    <state width="1286" height="707" key="XDebugger.FullValuePopup/0.32.2560.1408@0.32.2560.1408" timestamp="1598045884039" />
     <state x="143" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1598023480192">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="143" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1598023480192" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/parser/pkt2QStruct.go</url>
-          <line>101</line>
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/parser/pkt2QStruct.go</url>
-          <line>102</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/parser/pkt2QStruct.go</url>
-          <line>100</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/parser/pkt2QStruct.go</url>
-          <line>103</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/parser/pkt2QStruct.go</url>
-          <line>104</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
