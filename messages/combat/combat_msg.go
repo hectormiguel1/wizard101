@@ -144,7 +144,7 @@ func (m CombatHealth) String() string {
 
 /* Server informing client the stats of each teammate */
 type CombatStats struct {
-	DualID    uint64
+	DuelID    uint64
 	PartID    uint64
 	StatsData []byte
 }

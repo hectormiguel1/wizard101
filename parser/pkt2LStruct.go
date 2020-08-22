@@ -34,6 +34,7 @@ var LoginMessageNumberLookUp = [...]messages.ProtocolMessage{
 	login.WebValidate{},
 	login.ChangeCharacterName{},
 	login.UserAuthV3{},
+	nil,
 }
 
 func BuildLoginStruct(packet []byte, message string) messages.ProtocolMessage {

@@ -38,7 +38,7 @@ func main() {
 }
 
 func liveCapture(device string) {
-	handle, err := pcap.OpenLive(device, SnapShotLength, false, TimeOut)
+	handle, err := pcap.OpenLive(device, SnapShotLength, true, TimeOut)
 	if err != nil {
 		panic("Failure to Open Device for live Capture!")
 	} else {

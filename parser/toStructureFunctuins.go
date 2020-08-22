@@ -89,7 +89,7 @@ func buildWizardHousingMessage(array []byte, number uint8) messages.ProtocolMess
 }
 
 func buildDuelMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return buildCombatStruct(array, CombatMessageNumberLookUp[number].String())
 
 }
 
