@@ -10,7 +10,7 @@ func buildLoginMessage(array []byte, number uint8) messages.ProtocolMessage {
 }
 
 func buildPatchMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return BuildPatchMessages(array, number)
 }
 
 func buildPetMessage(array []byte, number uint8) messages.ProtocolMessage {

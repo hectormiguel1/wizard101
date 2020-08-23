@@ -52,7 +52,6 @@ func (m LatestFileListV2) String() string {
 Patch Client sends this message with the current version of a specific package.
 Patch Server replies with the next version of the specific package.
 */
-
 type NextVersion struct {
 	PkgName   string
 	Version   int32
