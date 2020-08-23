@@ -2,7 +2,9 @@ package parser
 
 import (
 	"wizard101/messages"
+	"wizard101/messages/game"
 	"wizard101/messages/misc"
+	"wizard101/messages/wizard"
 )
 
 func buildLoginMessage(array []byte, number uint8) messages.ProtocolMessage {
@@ -24,7 +26,7 @@ func buildTestManagerMessage(array []byte, number uint8) messages.ProtocolMessag
 }
 
 func buildWizardMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return wizard.Wizard{int(number)}
 
 }
 
@@ -44,42 +46,42 @@ func buildSobBlockMessage(array []byte, number uint8) messages.ProtocolMessage {
 }
 
 func buildSkullRiderMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return BuildMiniGameMessage(array, number)
 
 }
 
 func buildDoodleDougMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return BuildMiniGameMessage(array, number)
 
 }
 
 func buildMG1Message(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return BuildMiniGameMessage(array, number)
 
 }
 
 func buildMG2Message(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return BuildMiniGameMessage(array, number)
 
 }
 
 func buildMG3Message(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return BuildMiniGameMessage(array, number)
 
 }
 
 func buildMG4Message(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return BuildMiniGameMessage(array, number)
 
 }
 
 func buildMG5Message(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return BuildMiniGameMessage(array, number)
 
 }
 
 func buildMG6Message(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return BuildMiniGameMessage(array, number)
 
 }
 
@@ -99,17 +101,17 @@ func buildQuestMessage(array []byte, number uint8) messages.ProtocolMessage {
 }
 
 func buildWizard2Message(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return wizard.Wizard2{int(number)}
 
 }
 
 func buildCatchAKeyMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return BuildMiniGameMessage(array, number)
 
 }
 
 func buildGameMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	return game.Game{int(number)}
 
 }
 
