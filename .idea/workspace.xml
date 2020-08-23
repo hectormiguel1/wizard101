@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5de8d0d-2ab8-46ef-b1d3-5373f436e65d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/parser/pkt2MGStruct.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/game/game_msg.go" beforeDir="false" afterPath="$PROJECT_DIR$/messages/game/game_msg.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/wizard/wizard_msg.go" beforeDir="false" afterPath="$PROJECT_DIR$/messages/wizard/wizard_msg.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/wizard/wizard_msg_cont.go" beforeDir="false" afterPath="$PROJECT_DIR$/messages/wizard/wizard_msg_cont.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parser/toStructureFunctuins.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser/toStructureFunctuins.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +42,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
-    <property name="settings.editor.selected.configurable" value="go.vgo" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -56,7 +53,7 @@
     <configuration name="go build wizard101" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="wizard101" />
       <working_directory value="$PROJECT_DIR$" />
-      <parameters value="file $USER_HOME$/run2.pcapng" />
+      <parameters value="file $USER_HOME$/run1.pcapng" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/runner.go" />
       <package value="wizard101" />
@@ -80,7 +77,8 @@
     <MESSAGE value="added definitions for base messages." />
     <MESSAGE value="can now parse patch messages." />
     <MESSAGE value="Strucutre Definitions for most Mini-games." />
-    <option name="LAST_COMMIT_MESSAGE" value="Strucutre Definitions for most Mini-games." />
+    <MESSAGE value="can now parse most minigame messages, excluding sobblocks. added a generic struct for game, wizard and wizard2 messages, to see when they are sent and the message sent, still need to implement the message structures." />
+    <option name="LAST_COMMIT_MESSAGE" value="can now parse most minigame messages, excluding sobblocks. added a generic struct for game, wizard and wizard2 messages, to see when they are sent and the message sent, still need to implement the message structures." />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -94,10 +92,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="276" y="390" key="#Go_Modules/0.27.1920.1053@0.27.1920.1053" timestamp="1598023836046" />
-    <state x="0" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598148479955">
+    <state x="0" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598150977178">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="0" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1598148479955" />
+    <state x="0" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1598150977178" />
     <state x="214" y="355" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598024287014">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -106,10 +104,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="880" y="291" width="668" height="555" key="#xdebugger.XInspectDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1598035450926" />
-    <state x="75" y="100" key="CommitChangelistDialog2" timestamp="1598149032639">
+    <state x="75" y="100" key="CommitChangelistDialog2" timestamp="1598149721559">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="75" y="100" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1598149032639" />
+    <state x="75" y="100" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1598149721559" />
     <state width="490" height="506" key="DebuggerActiveHint" timestamp="1598035475554">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -122,22 +120,22 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="744" y="310" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1598024674374" />
-    <state width="1874" height="216" key="GridCell.Tab.0.bottom" timestamp="1598149620827">
+    <state width="1874" height="342" key="GridCell.Tab.0.bottom" timestamp="1598150132615">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="216" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1598149620827" />
-    <state width="1874" height="216" key="GridCell.Tab.0.center" timestamp="1598149620827">
+    <state width="1874" height="342" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1598150132615" />
+    <state width="1874" height="342" key="GridCell.Tab.0.center" timestamp="1598150132613">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="216" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1598149620827" />
-    <state width="1874" height="216" key="GridCell.Tab.0.left" timestamp="1598149620826">
+    <state width="1874" height="342" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1598150132613" />
+    <state width="1874" height="342" key="GridCell.Tab.0.left" timestamp="1598150132612">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="216" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1598149620826" />
-    <state width="1874" height="216" key="GridCell.Tab.0.right" timestamp="1598149620827">
+    <state width="1874" height="342" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1598150132612" />
+    <state width="1874" height="342" key="GridCell.Tab.0.right" timestamp="1598150132614">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="216" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1598149620827" />
+    <state width="1874" height="342" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1598150132614" />
     <state width="1874" height="410" key="GridCell.Tab.1.bottom" timestamp="1598037447033">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -154,14 +152,14 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1874" height="410" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1598037447033" />
-    <state x="0" y="188" key="SettingsEditor" timestamp="1598024715294">
+    <state x="238" y="209" key="SettingsEditor" timestamp="1598150908933">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="0" y="188" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1598024715294" />
-    <state x="76" y="287" key="Vcs.Push.Dialog.v2" timestamp="1598149039129">
+    <state x="238" y="209" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1598150908933" />
+    <state x="76" y="287" key="Vcs.Push.Dialog.v2" timestamp="1598149727751">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="76" y="287" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1598149039129" />
+    <state x="76" y="287" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1598149727751" />
     <state width="964" height="528" key="XDebugger.FullValuePopup" timestamp="1598037381159">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

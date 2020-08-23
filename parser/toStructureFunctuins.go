@@ -26,7 +26,7 @@ func buildTestManagerMessage(array []byte, number uint8) messages.ProtocolMessag
 }
 
 func buildWizardMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return wizard.Wizard{int(number)}
+	return wizard.Wizard{MsgOrder: int(number)}
 
 }
 
@@ -101,7 +101,7 @@ func buildQuestMessage(array []byte, number uint8) messages.ProtocolMessage {
 }
 
 func buildWizard2Message(array []byte, number uint8) messages.ProtocolMessage {
-	return wizard.Wizard2{int(number)}
+	return wizard.Wizard2{MsgOrder: int(number)}
 
 }
 
@@ -111,7 +111,7 @@ func buildCatchAKeyMessage(array []byte, number uint8) messages.ProtocolMessage 
 }
 
 func buildGameMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return game.Game{int(number)}
+	return game.Game{MsgOrder: int(number)}
 
 }
 
