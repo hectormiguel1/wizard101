@@ -9,6 +9,8 @@ const (
 	StartSignal          = 61453
 	KeepAlive            = 3
 	KeepAliveRsp         = 4
+	Ping                 = 1
+	PingRsp              = 2
 	BaseMessages         = 1
 	ExtendedBaseMessages = 2
 	GameMessages         = 5
@@ -47,10 +49,11 @@ type Message struct {
 	ProtocolMessageLength int
 	ProtocolMessage       messages.ProtocolMessage
 }
+
 /* Function goes through the packet looking for the Food Signal */
-func TestPacket(packet []byte)  ([]byte, bool){
+func TestPacket(packet []byte) ([]byte, bool) {
 	packet, startSignal := ReadUShort(packet)
-	for startSignal != StartSignal && len(packet) > SizeOfShort	{
+	for startSignal != StartSignal && len(packet) > SizeOfShort {
 		packet, startSignal = ReadUShort(packet)
 	}
 	if len(packet) > SizeOfShort {
@@ -80,7 +83,7 @@ func BuildMessage(packet []byte) Message {
 			ProtocolMessageLength: int(protocolMessageLength), ProtocolMessage: controlMessageTyped}
 
 	} else {
-		decodedMessage := DecodeMessage(packet, protocol,protocolMessageNumber);
+		decodedMessage := DecodeMessage(packet, protocol, protocolMessageNumber)
 		return Message{TotalMessageLength: int(totalMessageLength),
 			IsControl: int(isControl), OpCode: int(opCode), unkownBit1: unkown1, unkownBit2: unkown2,
 			MessageProtocol: int(protocol), ProtocolMessageType: int(protocolMessageNumber),
@@ -143,6 +146,3 @@ func DecodeMessage(byteArray []byte, protocolNumber uint8, messageNumber uint8) 
 		return nil
 	}
 }
-
-
-

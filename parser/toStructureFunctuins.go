@@ -119,7 +119,14 @@ func buildExtendedBaseMessage(array []byte, number uint8) messages.ProtocolMessa
 }
 
 func buildBaseMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return nil
+	switch number {
+	case Ping:
+		return misc.Ping{}
+	case PingRsp:
+		return misc.PingResponse{}
+	default:
+		return nil
+	}
 }
 
 func buildControlMessage(opCode uint8) messages.ProtocolMessage {
