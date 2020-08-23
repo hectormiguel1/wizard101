@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5de8d0d-2ab8-46ef-b1d3-5373f436e65d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/messages/misc/base_msg.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/misc/patch_msg.go" beforeDir="false" afterPath="$PROJECT_DIR$/messages/misc/patch_msg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages/misc/extbase_msg.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +71,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implemented Structures for the Patch Messges (protocol 8)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Structures for the Patch Messges (protocol 8)" />
+    <MESSAGE value="Implemented Structures for the Base Messages (protocol 1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Structures for the Base Messages (protocol 1)" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -98,10 +98,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="880" y="291" width="668" height="555" key="#xdebugger.XInspectDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1598035450926" />
-    <state x="75" y="100" key="CommitChangelistDialog2" timestamp="1598146261649">
+    <state x="75" y="100" key="CommitChangelistDialog2" timestamp="1598146590617">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="75" y="100" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1598146261649" />
+    <state x="75" y="100" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1598146590617" />
     <state width="490" height="506" key="DebuggerActiveHint" timestamp="1598035475554">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
