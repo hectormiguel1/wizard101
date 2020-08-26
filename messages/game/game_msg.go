@@ -220,3 +220,165 @@ type RadialQuickChat struct {
 func (m RadialQuickChat) String() string {
 	return fmt.Sprintf("%T", m)
 }
+
+/* Client-initiated radial quick chat request that uses extended format for message */
+type RequestRadialQuickChatText struct {
+	Message string
+}
+
+func (m RequestRadialQuickChatText) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Server Initiated radial quick chat response for messaged that use extended format */
+type RadialQuickChatText struct {
+	SourceName string
+	SourceID   uint64
+	Message    string
+	Filter     int8
+}
+
+func (m RadialQuickChatText) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Client initiated Directed chat request */
+type RequestDirectedChat struct {
+	Message  string
+	TargetID uint64
+}
+
+func (m RequestDirectedChat) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Client initiated Directed chat request by Name*/
+type RequestDirectedChatByName struct {
+	Message    string
+	TargetName string
+}
+
+func (m RequestDirectedChatByName) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Response for RequestDirectedChatByName */
+type DirectedChatByNameResponse struct {
+	Message    string
+	TargetName string
+}
+
+func (m DirectedChatByNameResponse) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Response to RequestDirectedChat */
+type DirectedChat struct {
+	SourceName string
+	SourceID   uint64
+	Message    string
+	TargetID   uint64
+	Filter     int8
+}
+
+func (m DirectedChat) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Server initiated Channel chat Sent from source Name */
+type ChannelChat struct {
+	SourceName string
+	SourceID   uint64
+	Message    string
+	TargetID   uint64
+	Filter     int8
+	Flags      int32
+}
+
+func (m ChannelChat) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Server Notifying client about new channel instance */
+type NotifyChannelInstance struct {
+	RecipientID uint64
+	ParentID    uint64
+	ID          uint64
+	Name        string
+	Create      int8
+}
+
+func (m NotifyChannelInstance) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Client request Directed Quick chat */
+type RequestDirectedQuickChat struct {
+	TargetID  uint64
+	MessageID uint32
+}
+
+func (m RequestDirectedQuickChat) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Client request Directed Quick chat (new format)*/
+type RequestDirectedQuickChatText struct {
+	TargetID uint64
+	Message  string
+}
+
+func (m RequestDirectedQuickChatText) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Server Directed Quick Chat response */
+type DirectedQuickChat struct {
+	SourceName string
+	SourceID   uint64
+	MessageID  uint32
+	Filter     int8
+	Flags      uint32
+}
+
+func (m DirectedQuickChat) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Server Directed Quick Chat response (new format)*/
+type DirectedQuickChatText struct {
+	SourceName string
+	SourceID   uint64
+	Message    string
+	Filter     int8
+	Flags      uint32
+}
+
+func (m DirectedQuickChatText) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Server informing client target cant restive direct chat */
+type DirectedChatFail struct {
+}
+
+func (m DirectedChatFail) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Transferring zones in the same server */
+type ZoneTransfer struct {
+	ZoneName            string
+	ZoneID              uint64
+	Slot                int32
+	DynamicZoneID       uint32
+	DynamicServerProcID uint32
+	ZoneCounter         int8
+	TransitionID        uint32
+	SessionID           uint64
+	SessionSlot         int32
+}
+
+func (m ZoneTransfer) String() string {
+	return fmt.Sprintf("%T", m)
+}
