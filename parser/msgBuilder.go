@@ -39,15 +39,9 @@ const (
 )
 
 type Message struct {
-	TotalMessageLength    int
-	IsControl             int
-	OpCode                int
-	unkownBit1            uint8
-	unkownBit2            uint8
-	MessageProtocol       int
-	ProtocolMessageType   int
-	ProtocolMessageLength int
-	ProtocolMessage       messages.ProtocolMessage
+	sourceIP        string
+	DestIP          string
+	ProtocolMessage messages.ProtocolMessage
 }
 
 /* Function goes through the packet looking for the Food Signal */
@@ -63,31 +57,25 @@ func TestPacket(packet []byte) ([]byte, bool) {
 	}
 }
 
-func BuildMessage(packet []byte) Message {
-	packet, totalMessageLength := ReadUShort(packet)
+func BuildMessage(packet []byte, sourceIP string, destIP string) Message {
+	packet, _ = ReadUShort(packet)
 	packet, isControl := ReadUByte(packet)
 	packet, opCode := ReadUByte(packet)
 	//Unknown bits 1 and 2  (are always zero)
-	packet, unkown1 := ReadUByte(packet)
-	packet, unkown2 := ReadUByte(packet)
+	packet, _ = ReadUByte(packet)
+	packet, _ = ReadUByte(packet)
 
 	packet, protocol := ReadUByte(packet)
 	packet, protocolMessageNumber := ReadUByte(packet)
-	packet, protocolMessageLength := ReadUShort(packet)
+	packet, _ = ReadUShort(packet)
 
 	if isControl > NoControl {
 		controlMessageTyped := buildControlMessage(opCode)
-		return Message{TotalMessageLength: int(totalMessageLength),
-			IsControl: int(isControl), OpCode: int(opCode), unkownBit1: unkown1, unkownBit2: unkown2,
-			MessageProtocol: int(protocol), ProtocolMessageType: int(protocolMessageNumber),
-			ProtocolMessageLength: int(protocolMessageLength), ProtocolMessage: controlMessageTyped}
+		return Message{sourceIP: sourceIP, DestIP: destIP, ProtocolMessage: controlMessageTyped}
 
 	} else {
 		decodedMessage := DecodeMessage(packet, protocol, protocolMessageNumber)
-		return Message{TotalMessageLength: int(totalMessageLength),
-			IsControl: int(isControl), OpCode: int(opCode), unkownBit1: unkown1, unkownBit2: unkown2,
-			MessageProtocol: int(protocol), ProtocolMessageType: int(protocolMessageNumber),
-			ProtocolMessageLength: int(protocolMessageLength), ProtocolMessage: decodedMessage}
+		return Message{sourceIP: sourceIP, DestIP: destIP, ProtocolMessage: decodedMessage}
 	}
 
 }

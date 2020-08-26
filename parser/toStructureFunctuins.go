@@ -2,7 +2,6 @@ package parser
 
 import (
 	"wizard101/messages"
-	"wizard101/messages/game"
 	"wizard101/messages/misc"
 	"wizard101/messages/wizard"
 )
@@ -111,7 +110,7 @@ func buildCatchAKeyMessage(array []byte, number uint8) messages.ProtocolMessage 
 }
 
 func buildGameMessage(array []byte, number uint8) messages.ProtocolMessage {
-	return game.Game{MsgOrder: int(number)}
+	return nil
 
 }
 

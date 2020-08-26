@@ -161,3 +161,62 @@ type LoginComplete struct {
 	IsBossMarkZone              int8
 	CriticalObjects             []byte //Object blobs.
 }
+
+func (m LoginComplete) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Client-Initiated Radial Chat request */
+type RequestRadialChat struct {
+	Message string
+}
+
+func (m RequestRadialChat) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Client initiated radial owner chat request */
+type RequestRadialChatOwner struct {
+	Message    string
+	SourceID   uint64
+	Filter     int8
+	SourceName string
+	IsOwner    int8
+}
+
+func (m RequestRadialChatOwner) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Server-initiated radial chat response - send to all in range of player who requested radial chat */
+type RadialChat struct {
+	SourceName string
+	SourceID   uint64
+	Message    string
+	Filter     int8
+}
+
+func (m RadialChat) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Client Initiated radial quick chat request */
+type RequestRadialQuickChat struct {
+	MessageID uint32
+}
+
+func (m RequestRadialQuickChat) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Server Initiated Radial quick chat response sent to all nearby players */
+type RadialQuickChat struct {
+	SourceName string
+	SourceID   uint64
+	MessageID  uint32
+	Filter     int8
+}
+
+func (m RadialQuickChat) String() string {
+	return fmt.Sprintf("%T", m)
+}

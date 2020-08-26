@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/google/gopacket"
+	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcap"
 	"os"
 	"time"
@@ -40,11 +41,13 @@ func analyze(analysisType string, source string) {
 		_ = handle.SetBPFFilter(Wizard101BPFFilter)
 		packetSource := gopacket.NewPacketSource(handle, handle.LinkType())
 		for packet := range packetSource.Packets() {
+			ipLayer := packet.Layer(layers.LayerTypeIPv4)
+			ip, _ := ipLayer.(*layers.IPv4)
 			packet, isKINetworkProtocol := parser.TestPacket(packet.Data())
 			if isKINetworkProtocol {
-				message := parser.BuildMessage(packet)
+				message := parser.BuildMessage(packet, ip.SrcIP.String(), ip.DstIP.String())
 				if message.ProtocolMessage != nil {
-					fmt.Printf("%#v \n\n", message.ProtocolMessage)
+					fmt.Printf("%#v \n\n", message)
 				}
 
 			}
