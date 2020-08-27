@@ -6,6 +6,7 @@ import (
 	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcap"
 	"os"
+	"syscall"
 	"time"
 	"wizard101/parser"
 )
@@ -47,7 +48,7 @@ func analyze(analysisType string, source string) {
 			if isKINetworkProtocol {
 				message := parser.BuildMessage(packet, ip.SrcIP.String(), ip.DstIP.String())
 				if message.ProtocolMessage != nil {
-					fmt.Printf("%#v \n\n", message)
+					_, _ = syscall.Write(syscall.Stdout, []byte(fmt.Sprintf("%#v \n\n", message)))
 				}
 
 			}
