@@ -382,3 +382,113 @@ type ZoneTransfer struct {
 func (m ZoneTransfer) String() string {
 	return fmt.Sprintf("%T", m)
 }
+
+/* Test if server transfer can be done */
+type ServerTransfer struct {
+	Ip              string
+	TcpPort         int32
+	UdpPort         int32
+	Key             int32
+	UserID          uint64
+	CharID          uint64
+	ZoneName        string
+	ZoneID          uint64
+	Location        string
+	Slot            int32
+	SessionID       uint64
+	SessionSlot     int32
+	TargetPlayerID  uint64
+	FallBackIP      string
+	FallBackTCPPort int32
+	FallBackUDPPort int32
+	FallBackKey     int32
+	FallbackZone    string
+	FallbackZoneID  uint64
+	TransitionID    uint32
+}
+
+func (m ServerTransfer) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Release character is delayed */
+type ReleaseDelay struct {
+}
+
+func (m ReleaseDelay) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Server has detected an invalid movement, correcting client */
+type MoveCorrection struct {
+	LocationX float32
+	LocationY float32
+	LocationZ float32
+	Direction float32
+}
+
+func (m MoveCorrection) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Request code for secure chat with friend */
+type RequestChatCode struct {
+	ListOwnerGID uint64
+	Code         string
+	CodeTime     int32
+	SpecialCode  int32
+	Forwarded    int8
+	NameBlob     string
+}
+
+func (m RequestChatCode) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Send generated code for secure chat */
+type SendCode struct {
+	ListOwnerID uint64
+	Code        string
+	Error       uint32
+	UseSuccess  uint64
+	CreatorName string
+}
+
+func (m SendCode) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Ask that chat server to use the chat code for secure communication */
+type UseChatCode struct {
+	ListOwnerGID uint64
+	BuddyID      uint64
+	Code         string
+	Forwarded    int8
+}
+
+func (m UseChatCode) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Ignore List as a blob */
+type IgnoreList struct {
+	ListOwnerGID uint64
+	ListData     string
+	Add          int8
+}
+
+func (m IgnoreList) String() string {
+	return fmt.Sprintf("%T", m)
+}
+
+/* Setting best friend on buddy */
+type BestFriend struct {
+	LisOwnerGID  uint64
+	BuddyID      uint64
+	Forwarded    int8
+	FriendSymbol int8
+}
+
+func (m BestFriend) String() string {
+	return fmt.Sprintf("%T", m)
+}
