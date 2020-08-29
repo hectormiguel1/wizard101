@@ -26,8 +26,10 @@ func main() {
 	args := os.Args
 	if len(args) < NumOfArgsExp {
 		usage()
+		os.Exit(1)
+	} else {
+		analyze(args[ModeIndex], args[SourceIndex])
 	}
-	analyze(args[ModeIndex], args[SourceIndex])
 }
 
 func usage() {

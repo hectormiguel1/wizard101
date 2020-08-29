@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5de8d0d-2ab8-46ef-b1d3-5373f436e65d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dml_strucutures/quests/DMLQuest.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages/quest/quest_msg.go" beforeDir="false" afterPath="$PROJECT_DIR$/messages/quest/quest_msg.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/pkt2QStruct.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser/pkt2QStruct.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner.go" beforeDir="false" afterPath="$PROJECT_DIR$/runner.go" afterDir="false" />
-    </list>
+    <list default="true" id="b5de8d0d-2ab8-46ef-b1d3-5373f436e65d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,8 +57,7 @@
     <configuration name="go build wizard101" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="wizard101" />
       <working_directory value="$PROJECT_DIR$" />
-      <parameters value="live enp5s0" />
-      <sudo value="true" />
+      <parameters value="help" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/runner.go" />
       <package value="wizard101" />
@@ -93,7 +86,8 @@
     <MESSAGE value="Moved from using separate functions for live and offline analysis to using a single function, and just changing handle type. Started working on the game messages." />
     <MESSAGE value="trimmed down parser message, now it only shows the source ip, dest ip and the message sent (KINP message)" />
     <MESSAGE value="further work on game message structure definitions. (11-15% done )" />
-    <option name="LAST_COMMIT_MESSAGE" value="further work on game message structure definitions. (11-15% done )" />
+    <MESSAGE value="added usage string to know how to use program." />
+    <option name="LAST_COMMIT_MESSAGE" value="added usage string to know how to use program." />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -107,12 +101,12 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="276" y="390" key="#Go_Modules/0.27.1920.1053@0.27.1920.1053" timestamp="1598023836046" />
-    <state x="0" y="277" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598675545995">
+    <state x="0" y="277" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598679080877">
       <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state x="0" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1598150977178" />
     <state x="0" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1598360677471" />
-    <state x="0" y="277" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.32.2560.1408@0.32.2560.1408" timestamp="1598675545995" />
+    <state x="0" y="277" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.32.2560.1408@0.32.2560.1408" timestamp="1598679080877" />
     <state x="214" y="355" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598024287014">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -122,11 +116,12 @@
     </state>
     <state x="880" y="291" width="668" height="555" key="#xdebugger.XInspectDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1598035450926" />
     <state x="1173" y="385" key="#xdebugger.XInspectDialog/0.32.2560.1408@0.32.2560.1408" timestamp="1598675934147" />
-    <state x="0" y="103" key="CommitChangelistDialog2" timestamp="1598408763162">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="0" y="130" width="930" height="875" key="CommitChangelistDialog2" timestamp="1598679065429">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state x="75" y="100" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1598149721559" />
     <state x="0" y="103" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1598408763162" />
+    <state x="0" y="130" width="930" height="875" key="CommitChangelistDialog2/0.32.2560.1408@0.32.2560.1408" timestamp="1598679065429" />
     <state width="490" height="506" key="DebuggerActiveHint" timestamp="1598035475554">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -187,11 +182,12 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="238" y="209" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1598150908933" />
-    <state x="76" y="289" key="Vcs.Push.Dialog.v2" timestamp="1598408768933">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="101" y="379" key="Vcs.Push.Dialog.v2" timestamp="1598679070490">
+      <screen x="0" y="32" width="2560" height="1408" />
     </state>
     <state x="76" y="287" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1598149727751" />
     <state x="76" y="289" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1598408768933" />
+    <state x="101" y="379" key="Vcs.Push.Dialog.v2/0.32.2560.1408@0.32.2560.1408" timestamp="1598679070490" />
     <state width="1286" height="707" key="XDebugger.FullValuePopup" timestamp="1598678755709">
       <screen x="0" y="32" width="2560" height="1408" />
     </state>
