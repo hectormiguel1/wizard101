@@ -47,6 +47,8 @@ func analyze(analysisType string, source string) {
 		handle, err = pcap.OpenLive(source, SnapShotLength, true, TimeOut)
 	} else if analysisType == OfflineCapture {
 		handle, err = pcap.OpenOffline(source)
+	} else {
+		panic("Invalid argument passed.")
 	}
 	if err == nil {
 		_ = handle.SetBPFFilter(Wizard101BPFFilter)
