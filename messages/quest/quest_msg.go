@@ -5,10 +5,10 @@ import (
 )
 
 /*
-This file provides the structure implementations for the Quest Messages (protocol 52).
+This file provides the structure implementations for the quests Messages (protocol 52).
 */
 /*
-Contains information for the given Quest
+Contains information for the given quests
 */
 type SendQuest struct {
 	QuestID          uint64
@@ -17,8 +17,8 @@ type SendQuest struct {
 	QuestTitle       string
 	QuestInfo        []byte
 	New              uint8
-	QuestMadLibs     []byte
-	GoalData         []byte
+	QuestMadLibs     string
+	GoalData         string
 	Rewards          []byte
 	ClientTags       []byte
 	NoQuestHelper    uint8
@@ -133,7 +133,7 @@ func (m PersonaInfo) String() string {
 	return fmt.Sprintf("%T", m)
 }
 
-/* Tell the server to accept offered Quest */
+/* Tell the server to accept offered quests */
 type AcceptQuest struct {
 	MobileID  uint64
 	QuestName string
@@ -143,7 +143,7 @@ func (m AcceptQuest) String() string {
 	return fmt.Sprintf("%T", m)
 }
 
-/* Tell the server about declined Quest */
+/* Tell the server about declined quests */
 type DeclineQuest struct {
 	QuestName string
 }

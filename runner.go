@@ -19,15 +19,23 @@ const (
 	OfflineCapture                   = "file"
 	SnapShotLength                   = 1024
 	Wizard101BPFFilter               = "src net 165.193.0.0/16 or dst net 165.193.0.0/16"
-	TimeOut            time.Duration = 30 * time.Second
+	TimeOut            time.Duration = 100 * time.Millisecond
 )
 
 func main() {
 	args := os.Args
 	if len(args) < NumOfArgsExp {
-		panic("Failed to pass file to parse packets from! (File must be in pcap format)")
+		usage()
 	}
 	analyze(args[ModeIndex], args[SourceIndex])
+}
+
+func usage() {
+	fmt.Println("To run the program use the fallowing instructions: \n" +
+		"wizard101 [file|live] [source] \n" +
+		"file : this is used to read from source as a file in pcapng format, source must be file (this can be run without admin privileges.) \n" +
+		"live: this is the option for live packet analysis, requires source to be network device where packages are captured from (requires admin privileges.) \n" +
+		"source: this is the file or the network interface where the packets will be read from. (file must be in pcapng format)")
 }
 
 func analyze(analysisType string, source string) {
