@@ -48,7 +48,7 @@ func buildQuestStruct(packet []byte, structToBuild string) messages.ProtocolMess
 	case quest.RemoveQuest{}.String():
 		return buildRemoveQuest(packet)
 	case quest.SendGoal{}.String():
-		return buildSendGoal(packet)
+		return buildSendGoal(packet).(quest.SendGoal)
 	case quest.SendNpcOptions{}.String():
 		return buildSendNpcOptions(packet)
 	case quest.SendQuest{}.String():
@@ -60,7 +60,7 @@ func buildQuestStruct(packet []byte, structToBuild string) messages.ProtocolMess
 
 func buildSendQuest(packet []byte) messages.ProtocolMessage {
 	packet, questID := ReadGuid(packet)
-	packet, quiestNameID := ReadUInt(packet)
+	packet, questNameID := ReadUInt(packet)
 	packet, questType := ReadUInt(packet)
 	packet, length := ReadUShort(packet)
 	packet, questTitle := readString(packet)
@@ -80,8 +80,8 @@ func buildSendQuest(packet []byte) messages.ProtocolMessage {
 	packet, skipAutoSelect := ReadUByte(packet)
 	packet, petOnly := ReadUByte(packet)
 
-	return quest.SendQuest{QuestID: questID, QuestNameID: quiestNameID, QuestType: questType, QuestTitle: questTitle,
-		QuestInfo: questInfo, New: New, QuestMadLibs: questMadLibs, GoalData: goalData, Rewards: rewards, ClientTags: clientTags,
+	return quest.SendQuest{QuestID: questID, QuestNameID: questNameID, QuestType: questType, QuestTitle: questTitle,
+		QuestInfo: questInfo, New: New, QuestMadLibs: string(questMadLibs), GoalData: string(goalData), Rewards: rewards, ClientTags: clientTags,
 		NoQuestHelper: noQuestHelper, MainLine: mainline, SkipQHAutoSelect: skipAutoSelect, PetOnlyQuest: petOnly}
 
 }
@@ -95,7 +95,7 @@ func buildSendNpcOptions(packet []byte) messages.ProtocolMessage {
 	return quest.SendNpcOptions{MobileID: mobileID, Options: []byte(string(Options)), ReInteract: reInteract}
 }
 
-func buildSendGoal(packet []byte) messages.ProtocolMessage {
+func buildSendGoal(packet []byte) interface{} {
 	packet, questID := ReadGuid(packet)
 	packet, goalID := ReadGuid(packet)
 	packet, goalName := ReadUInt(packet)
@@ -151,9 +151,9 @@ func buildRemoveGoal(packet []byte) messages.ProtocolMessage {
 func buildQuestOffer(packet []byte) messages.ProtocolMessage {
 	packet, mobileID := ReadGuid(packet)
 	packet, length := ReadUShort(packet)
-	packet, questName := readString(packet)
+	packet, questName := ReadStringWithLength(packet, length)
 	packet, length = ReadUShort(packet)
-	packet, questTitle := readString(packet)
+	packet, questTitle := ReadStringWithLength(packet, length)
 	packet, length = ReadUShort(packet)
 	packet, questInfo := ReadStringWithLength(packet, length)
 	packet, level := ReadInt(packet)
@@ -163,7 +163,7 @@ func buildQuestOffer(packet []byte) messages.ProtocolMessage {
 	packet, goalData := ReadStringWithLength(packet, length)
 	packet, isMainLine := ReadUByte(packet)
 
-	return quest.QuestOffer{MobileID: mobileID, QuestName: questName, QuestTitle: questTitle, QuestInfo: questInfo,
+	return quest.QuestOffer{MobileID: mobileID, QuestName: string(questName), QuestTitle: string(questTitle), QuestInfo: questInfo,
 		Level: level, Rewards: rewards, GoalData: goalData, MainLine: isMainLine}
 
 }
