@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcap"
+	log "github.com/sirupsen/logrus"
 	"os"
-	"syscall"
 	"time"
 	"wizard101/parser"
 )
@@ -22,18 +21,34 @@ const (
 	TimeOut            time.Duration = 100 * time.Millisecond
 )
 
+var (
+	// Log is the package logger
+	Log *log.Logger
+)
+
+func init() {
+	// set and build package logger before start
+	Log = log.New()
+	configureLogger(Log)
+}
+
 func main() {
 	args := os.Args
 	if len(args) < NumOfArgsExp {
-		usage()
-		os.Exit(1)
-	} else {
-		analyze(args[ModeIndex], args[SourceIndex])
+    usage()
+    os.Exit(1)
 	}
+
+	// timestamp isn't important reading from capture file
+	if args[ModeIndex] == OfflineCapture {
+		Log.Formatter.(*log.TextFormatter).DisableTimestamp = true
+	}
+  
+	analyze(args[ModeIndex], args[SourceIndex])
 }
 
 func usage() {
-	fmt.Println("To run the program use the fallowing instructions: \n" +
+	fmt.Println("To run the program use the following instructions: \n" +
 		"wizard101 [file|live] [source] \n" +
 		"file : this is used to read from source as a file in pcapng format, source must be file (this can be run without admin privileges.) \n" +
 		"live: this is the option for live packet analysis, requires source to be network device where packages are captured from (requires admin privileges.) \n" +
@@ -43,27 +58,45 @@ func usage() {
 func analyze(analysisType string, source string) {
 	handle := &pcap.Handle{}
 	err := error(nil)
-	if analysisType == LiveCapture {
+	switch analysisType {
+	case LiveCapture:
+		Log.Infof("Listening via traffic filter '%v'", Wizard101BPFFilter)
 		handle, err = pcap.OpenLive(source, SnapShotLength, true, TimeOut)
-	} else if analysisType == OfflineCapture {
+	case OfflineCapture:
+		Log.Infof("Parsing pcap via traffic filter '%v'", Wizard101BPFFilter)
 		handle, err = pcap.OpenOffline(source)
-	} else {
-		panic("Invalid argument passed.")
+	default:
+		panic("unknown capture type")
 	}
-	if err == nil {
-		_ = handle.SetBPFFilter(Wizard101BPFFilter)
-		packetSource := gopacket.NewPacketSource(handle, handle.LinkType())
-		for packet := range packetSource.Packets() {
-			ipLayer := packet.Layer(layers.LayerTypeIPv4)
-			ip, _ := ipLayer.(*layers.IPv4)
-			packet, isKINetworkProtocol := parser.TestPacket(packet.Data())
-			if isKINetworkProtocol {
-				message := parser.BuildMessage(packet, ip.SrcIP.String(), ip.DstIP.String())
-				if message.ProtocolMessage != nil {
-					_, _ = syscall.Write(syscall.Stdout, []byte(fmt.Sprintf("%#v \n\n", message)))
-				}
 
-			}
+	if err != nil {
+		Log.WithField("err", err).Fatal("Failed to open traffic source")
+		panic("failed to open source")
+	}
+	_ = handle.SetBPFFilter(Wizard101BPFFilter)
+	packetSource := gopacket.NewPacketSource(handle, handle.LinkType())
+	for packet := range packetSource.Packets() {
+		ipLayer := packet.Layer(layers.LayerTypeIPv4)
+		ip, _ := ipLayer.(*layers.IPv4)
+		packet, isKINetworkProtocol := parser.TestPacket(packet.Data())
+		if !isKINetworkProtocol {
+			continue
+		}
+
+		message := parser.BuildMessage(packet, ip.SrcIP.String(), ip.DstIP.String())
+		if message.ProtocolMessage != nil {
+			Log.Infof("%#v", message)
+		} else {
+			Log.WithField("msg", message).Error("Failed to parse message")
 		}
 	}
+}
+
+// configures the internal logger to its defaults
+func configureLogger(l *log.Logger) {
+	formatter := new(log.TextFormatter)
+	formatter.FullTimestamp = true
+	formatter.DisableColors = false
+	formatter.TimestampFormat = "06-01-02 15:04:05.00"
+	l.Formatter = formatter
 }
